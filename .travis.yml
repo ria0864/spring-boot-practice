@@ -6,4 +6,8 @@ jdk: openjdk8
 email:
   recipients:
     - dbwls08640@gmail.com
-  on_success: [always|never|change] #default:always
+  on_success: never
+  on_fail: always
+notifications:
+  slack: reactionary-group:yn8pX4Zl+7ddHxLk7/1/0uj759d6QcqOo9PgwQstAnUJeOZKFCt5355uoptadIN6LGOtyeXt+OPIlQ7hHU92lLxDU8AMcDwvzMTZHCaK8UbBj+O27myVKO7M/o6yOmHob5UDQKjnYtYONORLXnj5t7W7dkKHpvJuzx5g6V2AABHwe2Q1CYVAgzY1yfns6B5bX9yCMkeZXQNt+qzCp3KwtKVaTJAbU3GQcVn8EOI30fZ3+hk73i3SX+zjSLLna9UrCBsa+jL6kEZEIy2UYMgvcQOxFYS7E4P8OmAhaQ0s86EL7NQi9c+oX2vF6fLxwtYuQlf01aYi24r36+tv6gpS2o9/oKcn0u3T9Teq20QgZvakMW3ZLCq2ZnXvIDPO9mNiKNc4iwZ83mzyI+TFtEV0J96hEIvbGjEehhiOZnT2IJVhspGJTc2W1lHybplerSWs+3xT9a3rIFfKi0b3XauLOBoz1fxfKu/LQdc92tBOtCDH5gZ2viTb9UBFFZIHTa3HA5qgCZ7aEUVgf43QxekTYy6/cL9zZyMWycCpK+BG9oAtfc6XFAAofHNwakt2NQATEKXFkdnwhD9c5zkSkdIV4FmMJyVvmGsAVNu9sGTEs1icgbIyXkG3i5galGIO8kDz5lesolEnjUriHe6gOomRvw+z5wQglVHNnzosEcpJj1I=
+    on_success: always
