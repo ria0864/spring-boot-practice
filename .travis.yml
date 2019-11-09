@@ -1,0 +1,13 @@
+before_install:
+  - chmod +x gradlew
+install: gradle wrapper --gradle-version 5.6.4
+language: java
+jdk: openjdk8
+email:
+  recipients:
+    - dbwls08640@gmail.com
+  on_success: never
+  on_fail: always
+env:
+  global:
+    secure: HUe0S3/1kPj35GY073mFHJpW/zCpNf/TDXYRiH3tWAEER5zccYIQ82Tnm7CwRtDayaONfQrCPZ5xr9HZpUHiUFIY0oS4ljoyUPFIk3XFoVXjAezhKteiMcV3+mpHix7swsF8uz1D4jo/wQhgqRGWO5dSmtzgOn1ApfkMDKLQ3yG8nEBeT1o6EPzuoqXzsRwqlZ0m+0rnBUUZ7Q9sD7dY/50kgoVKInvPy0eef19G9JZV3D8Uw0q2LABN667KAN30rl8B+z7M4u1Gae6JX3MlonTpDEumgcYNglPQS0fPv1PvSFQ/mOO3w0T7vZvKfum2O++6EHHu25I1qoKL0x5livXZMY4fnlOLbtDLEtwchNLPoOscxWjp5IqAW4aOm/BqOxUo2UpQ2eTCc5j6zn2XD8trhQBI1i26YgCIPm+OIBqYfhWBPU/lDVeHKqrK9dZE/ylgUlBN1VAFiYBnv98gtd2taDd3f3HQKlylQV1YsIkDOxAX1B6wLSiB+IG+ZN2KuRzkobG5N13S4pcG/5CO+R+eBQzcHhsyutH7WaHz6SgfdcJx5z9ON3boAaZaCoTHVTFR/wolxjNmQW+ICVW/swgz9uOBoluSXg2GGf562dJdOUVDEOIAcwi1tX/IoxckKNRQ7T6jdTJNut4LYn7UHBaU3+6vH9U1rNzUseryN+U=
