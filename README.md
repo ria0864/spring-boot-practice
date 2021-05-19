@@ -3,8 +3,14 @@
 ### Tech Stack
 - [slack](https://slack.com/intl/en-kr/)
 - [springboot](https://start.spring.io/)
+- lombock
+- JPA
+- H2 Database
 
-#### Build Tools
+### Test
+- JUnit5
+
+### Build Tools
 - Gradle
 
 ### CI/CD
@@ -12,3 +18,6 @@
 - [AWS](https://aws.amazon.com/)
     * S3
     * code deploy
+
+### Monitoring
+- String Actuator
