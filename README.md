@@ -1,8 +1,9 @@
-# Demo web project For practice Using by SpringBoot [![Build Status](https://travis-ci.org/ria0864/spring-boot-practice.svg?branch=master)](https://travis-ci.org/ria0864/spring-boot-practice)
+# Demo web project For practice Using by SpringBoot [![Build Status](https://travis-ci.org/ria0864/spring-boot-practice.svg?branch=develop)](https://travis-ci.org/ria0864/spring-boot-practice)
+
+---
 
 ### Tech Stack
-- [slack](https://slack.com/intl/en-kr/)
-- [springboot](https://start.spring.io/)
+- [SpringBoot](https://start.spring.io/)
 - lombock
 - JPA
 - H2 Database
@@ -18,6 +19,6 @@
 - [AWS](https://aws.amazon.com/)
     * S3
     * code deploy
-
+- [slack](https://slack.com/intl/en-kr/)
 ### Monitoring
-- String Actuator
+- Spring Actuator
