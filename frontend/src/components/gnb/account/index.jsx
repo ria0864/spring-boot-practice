@@ -1,16 +1,15 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const Div = styled.div`
-  position: absolute;
-  background-color: #f0ffff;
-  color: #000000;
-  right: 0;
-  height: inherit;
-`;
+import { Routes, Route } from 'react-router-dom';
+import Login from './login';
+import Register from './register';
 
 function Account() {
-  return <Div>sign in</Div>;
+  return (
+    <Routes>
+      <Route path="login" element={<Login />} />
+      <Route path="register" element={<Register />} />
+    </Routes>
+  );
 }
 
 export default Account;
