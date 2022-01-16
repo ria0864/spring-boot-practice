@@ -14,7 +14,9 @@ function Header() {
   return (
     <StyledHeader className="header">
       <div className="logo">
-        <img src="/images/tmaxsoft.png" />
+        <Link to="/">
+          <img src="/images/tmaxsoft.png" />
+        </Link>
       </div>
       <Menu
         theme="dark"

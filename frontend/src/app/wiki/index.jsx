@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Reset } from 'styled-reset';
-import { Layout, Account } from 'components';
+import { Layout, Account, Home } from 'components';
 
 function Wiki() {
   return (
@@ -9,6 +9,7 @@ function Wiki() {
       <Reset />
       <Routes>
         <Route path="/" element={<Layout />}>
+          <Route path="" element={<Home />} />
           <Route path="account/*" element={<Account />} />
           <Route
             path="*"
