@@ -8,7 +8,7 @@ module.exports = {
   mode: 'development',
 
   // 애플리케이션 시작 경로
-  entry: './src/index.js',
+  entry: '/src/index.js',
 
   // 번들된 파일 경로
   output: {
@@ -36,8 +36,15 @@ module.exports = {
         ],
       },
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        test: /\.(css|scss)$/,
+        use: [
+          // Creates `style` nodes from JS strings
+          'style-loader',
+          // Translates CSS into CommonJS
+          'css-loader',
+          // Compiles Sass to CSS
+          'sass-loader',
+        ],
       },
     ],
   },
@@ -56,10 +63,17 @@ module.exports = {
     },
   },
 
+  output: {
+    path: path.resolve('dist'),
+    publicPath: '/',
+    filename: 'bundle.js',
+  },
+
   // 개발 서버 설정
   devServer: {
     host: 'localhost',
     port: port,
     open: true, // open page when start
+    historyApiFallback: true,
   },
 };
