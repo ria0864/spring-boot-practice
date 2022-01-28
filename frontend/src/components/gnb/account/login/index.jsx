@@ -1,35 +1,64 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Form, Input, Button, Checkbox } from 'antd';
+import React, { useState, useRef } from 'react';
+import { Checkbox } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
+import S from './style';
 
-const StyledDiv = styled.div`
-  display: flex;
-  justify-content: center;
-`;
+function Input(props) {
+  const { prefix, value = '', placeholder, type = 'text' } = props;
 
-const StyledForm = styled(Form)`
-  width: 300px;
-`;
-
-function Account() {
-  const onFinish = (values) => {
-    console.log('Received values of form: ', values);
+  const handleChange = (e) => {
+    setId(e.target.value);
   };
 
   return (
-    <StyledDiv>
-      <StyledForm
-        name="normal_login"
-        className="login-form"
-        initialValues={{
-          remember: true,
-        }}
-        onFinish={onFinish}
-      >
-        <Form.Item
-          name="username"
+    <>
+      {prefix}
+      <input
+        type={type}
+        placeholder={placeholder}
+        value={value}
+        onChange={handleChange}
+      />
+    </>
+  );
+}
+
+function FormItem(props) {
+  const { rules, children } = props;
+  const { required = true, message = '' } = rules;
+
+  return <S.FormItem>{children}</S.FormItem>;
+}
+
+function Form(props) {
+  const { handleSubmit, children } = props;
+
+  return <S.Form onSubmit={handleSubmit}>{children}</S.Form>;
+}
+
+function Account() {
+  const [id, setId] = useState('');
+  const [pw, setPw] = useState('');
+
+  const handleChangeId = (e) => {
+    setId(e.target.value);
+  };
+
+  const handleChangePw = (e) => {
+    setPw(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(e.target[0].value);
+    console.log('Received values of form: ', id, pw);
+  };
+
+  return (
+    <S.FormContainer>
+      <Form handleSubmit={handleSubmit} values={(id, pw)}>
+        <FormItem
           rules={[
             {
               required: true,
@@ -40,10 +69,11 @@ function Account() {
           <Input
             prefix={<UserOutlined className="site-form-item-icon" />}
             placeholder="Username"
+            value={id}
+            handleChange={handleChangeId}
           />
-        </Form.Item>
-        <Form.Item
-          name="password"
+        </FormItem>
+        <FormItem
           rules={[
             {
               required: true,
@@ -55,30 +85,26 @@ function Account() {
             prefix={<LockOutlined className="site-form-item-icon" />}
             type="password"
             placeholder="Password"
+            value={pw}
+            handleChange={handleChangePw}
           />
-        </Form.Item>
-        <Form.Item>
-          <Form.Item name="remember" valuePropName="checked" noStyle>
+        </FormItem>
+        <FormItem>
+          <FormItem>
             <Checkbox>Remember me</Checkbox>
-          </Form.Item>
+          </FormItem>
 
           <a className="login-form-forgot" href="">
             Forgot password
           </a>
-        </Form.Item>
+        </FormItem>
 
-        <Form.Item>
-          <Button
-            type="primary"
-            htmlType="submit"
-            className="login-form-button"
-          >
-            Log in
-          </Button>
+        <FormItem>
+          <Input type="submit" value="login" />
           Or <Link to="/account/register">register now!</Link>
-        </Form.Item>
-      </StyledForm>
-    </StyledDiv>
+        </FormItem>
+      </Form>
+    </S.FormContainer>
   );
 }
 

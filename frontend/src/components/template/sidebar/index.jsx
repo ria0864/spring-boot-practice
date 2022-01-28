@@ -3,10 +3,10 @@ import S from './style';
 import menu from './menu';
 
 function Option(props) {
-  const { key, value } = props;
+  const { value } = props;
 
   return (
-    <S.Option key={key}>
+    <S.Option>
       <span>{value}</span>
     </S.Option>
   );
@@ -14,12 +14,12 @@ function Option(props) {
 
 function SubMenu({ menu }) {
   const [isActive, setIsActive] = useState(false);
-  const { title, option, key, icon } = menu;
+  const { title, option, icon } = menu;
   const arrowStyle = isActive ? 'active' : 'inactive';
 
   return (
     <>
-      <S.SubMenu key={key}>
+      <S.SubMenu>
         <S.SubMenuTab onClick={() => setIsActive(!isActive)}>
           {icon}
           <span>{title}</span>
@@ -37,7 +37,7 @@ function Sidebar() {
     <S.Sider>
       <S.Menu>
         {menu.map((_menu) => (
-          <SubMenu menu={_menu} />
+          <SubMenu key={_menu.key} menu={_menu} />
         ))}
       </S.Menu>
     </S.Sider>

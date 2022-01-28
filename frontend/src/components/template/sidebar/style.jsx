@@ -40,16 +40,15 @@ const SubMenuTab = styled.div`
   div {
     position: absolute;
     right: 20px;
-    height: 7px;
     border-left: 5px solid #fff;
     border-right: 5px solid #fff;
 
     &.inactive {
-      border-bottom: 7px solid rgba(0, 0, 0, 0.85);
+      border-bottom: 5px solid rgba(0, 0, 0, 0.85);
     }
 
     &.active {
-      border-top: 7px solid rgba(0, 0, 0, 0.85);
+      border-top: 5px solid rgba(0, 0, 0, 0.85);
     }
   }
 `;
